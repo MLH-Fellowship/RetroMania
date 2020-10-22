@@ -43,16 +43,18 @@ func _physics_process(delta):
 	#animations that will run based on input
 	if grounded:
 		if move_dir == 0:
-			play_anim("idle")
+			$AnimatedSprite.play("idle")
 		else:
-			play_anim("Walk")
+			$AnimatedSprite.play("run")
 	else:
-		play_anim("jump")
+		$AnimatedSprite.play("jump")
 		
 #if character has 2 directions they can face
 #func flip():
 #	facing_right = !facing_right
 #	sprite.flip_h = !sprite.flip_h
+
+		
 
 #check the current running animation/state and trigger correct one
 func play_anim(anim_name):
