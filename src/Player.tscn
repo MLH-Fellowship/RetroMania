@@ -19,9 +19,7 @@
 [ext_resource path="res://assets/Characters/Player/idle/idle-3.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 24 )
-
-[sub_resource type="CircleShape2D" id=2]
+extents = Vector2( 9.60011, 23.2951 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -41,19 +39,19 @@ animations = [ {
 "speed": 7.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.60014, 23.295 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.66177, 10.1531 )
 shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 15 )
-shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "jump"
+animation = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -62,4 +60,18 @@ limit_top = 0
 limit_right = 3000
 limit_bottom = 500
 smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_right = 0.0
 editor_draw_limits = true
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+position = Vector2( 3.66176, 10.3195 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+modulate = Color( 0.239216, 0.223529, 0.733333, 1 )
+position = Vector2( -1.40667e-05, -2.57492e-05 )
+shape = SubResource( 4 )
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]

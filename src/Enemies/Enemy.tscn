@@ -19,9 +19,7 @@
 [ext_resource path="res://assets/Characters/Player/idle/idle-3.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 24 )
-
-[sub_resource type="CircleShape2D" id=2]
+extents = Vector2( 11.6413, 18.6923 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -41,16 +39,36 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.1552, 13.982 )
+
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.77491, 15.7277 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 15 )
-shape = SubResource( 2 )
-
 [node name="Enemy" type="AnimatedSprite" parent="."]
+position = Vector2( -0.21254, 0 )
 frames = SubResource( 3 )
-animation = "jump"
+animation = "idle"
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 3.55998, 16.8499 )
+scale = Vector2( 1.01594, 1.7013 )
+process_parent = true
+physics_process_parent = true
+
+[node name="StompDetecter" type="Area2D" parent="."]
+modulate = Color( 0.133333, 0.313726, 0.847059, 1 )
+position = Vector2( -4.54008, -11.8636 )
+scale = Vector2( 1, 2.63115 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StompDetecter"]
+position = Vector2( 8.16344, 3.97071 )
+scale = Vector2( 1, 0.380062 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="StompDetecter" to="." method="_on_StompDetecter_body_entered"]
