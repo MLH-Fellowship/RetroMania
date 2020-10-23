@@ -22,9 +22,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Enemy" parent="CanvasLayer/Level1" instance=ExtResource( 4 )]
-position = Vector2( 1691.28, 417.967 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
@@ -32,3 +29,6 @@ tile_data = PoolIntArray( -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, 0, 161061273
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 71, 420 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 972, 431 )
