@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/Characters/Player/jump/jump-1.png" type="Texture" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
@@ -17,9 +17,19 @@
 [ext_resource path="res://assets/Characters/Player/jump/jump-4.png" type="Texture" id=15]
 [ext_resource path="res://assets/Characters/Player/run/run-4.png" type="Texture" id=16]
 [ext_resource path="res://assets/Characters/Player/idle/idle-3.png" type="Texture" id=17]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-5.png" type="Texture" id=18]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-7.png" type="Texture" id=19]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-2.png" type="Texture" id=21]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-3.png" type="Texture" id=22]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-6.png" type="Texture" id=23]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-4.png" type="Texture" id=24]
+[ext_resource path="res://assets/Characters/Player/shoot/run-shoot-8.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.60011, 23.2951 )
+extents = Vector2( 10, 24 )
+
+[sub_resource type="CircleShape2D" id=2]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -37,41 +47,52 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 9.60014, 23.295 )
+extents = Vector2( 13, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.66177, 10.1531 )
+visible = false
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 15 )
+shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "idle"
+animation = "attack"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 current = true
 limit_left = 0
 limit_top = 0
 limit_right = 3000
 limit_bottom = 500
 smoothing_enabled = true
-drag_margin_left = 0.0
-drag_margin_right = 0.0
 editor_draw_limits = true
 
 [node name="EnemyDetector" type="Area2D" parent="."]
-position = Vector2( 3.66176, 10.3195 )
-collision_layer = 2
+visible = false
+monitorable = false
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-modulate = Color( 0.239216, 0.223529, 0.733333, 1 )
-position = Vector2( -1.40667e-05, -2.57492e-05 )
+visible = false
+modulate = Color( 0.0588235, 0.168627, 0.678431, 1 )
 shape = SubResource( 4 )
-[connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
-[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 20, 0 )

@@ -6,9 +6,9 @@ const JUMP_FORCE = 1000
 const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
 
-#references to animation player and sprite
-onready var anim_player = $AnimationPlayer
-onready var sprite = $Sprite
+#load firebal scene
+const FIREBALL = preload("res://src/Fireball.tscn")
+
 
 #directional values
 var y_velo = 0
@@ -21,6 +21,14 @@ func _physics_process(delta):
 		move_dir +=1
 	if Input.is_action_pressed("move_left"):
 		move_dir -=1
+		
+	#for hold to fire
+	if Input.is_action_just_pressed("shoot"):
+		var fireball = FIREBALL.instance()
+		get_parent().add_child(fireball)
+		
+		#get position2D so fireball fires from player
+		fireball.position = $Position2D.global_position
 	move_and_slide(Vector2(move_dir* MOVE_SPEED, y_velo),Vector2(0, -1))
 
 	#check if player is on ground
