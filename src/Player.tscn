@@ -30,15 +30,15 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "jump",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "jump",
+"speed": 4.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
