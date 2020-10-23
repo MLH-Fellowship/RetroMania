@@ -34,12 +34,6 @@ func _physics_process(delta):
 	if y_velo > MAX_FALL_SPEED:
 		y_velo = MAX_FALL_SPEED
 	
-	#refer to flip() method
-	#if facing_right and move_dir < 0:
-		#flip()
-	#if !facing_right and move_dir > 0:
-		#flip()
-	
 	#animations that will run based on input
 	if grounded:
 		if move_dir == 0:
@@ -49,15 +43,4 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.play("jump")
 		
-#if character has 2 directions they can face
-#func flip():
-#	facing_right = !facing_right
-#	sprite.flip_h = !sprite.flip_h
 
-		
-
-#check the current running animation/state and trigger correct one
-func play_anim(anim_name):
-	if anim_player.is_playing() and anim_player.current_animation == anim_name:
-		return
-	anim_player.play(anim_name)
