@@ -33,8 +33,8 @@ tile_data = PoolIntArray( -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, 0, 161061273
 position = Vector2( 71, 420 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 972, 431 )
+position = Vector2( 945, 451 )
 
 [node name="NextLevel2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1638, 362 )
+position = Vector2( 1623, 270 )
 next_scene = ExtResource( 5 )
