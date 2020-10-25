@@ -36,5 +36,5 @@ position = Vector2( 71, 420 )
 position = Vector2( 945, 451 )
 
 [node name="NextLevel2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1623, 270 )
+position = Vector2( 1593, 243 )
 next_scene = ExtResource( 5 )
