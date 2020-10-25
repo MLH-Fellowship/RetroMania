@@ -6,7 +6,7 @@
 [ext_resource path="res://src/Level Controller/NextLevelPortal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Worlds/World2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node"]
 
@@ -37,29 +37,31 @@ position = Vector2( 71, 420 )
 position = Vector2( 945, 451 )
 
 [node name="NextLevel2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1593, 243 )
+position = Vector2( 1623, 270 )
 next_scene = ExtResource( 5 )
 
 [node name="Coin" parent="." instance=ExtResource( 7 )]
-position = Vector2( 797, 282 )
+position = Vector2( 676, 337 )
 
 [node name="Coin2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 665, 340 )
+position = Vector2( 795, 279 )
 
 [node name="Coin3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 846, 280 )
+position = Vector2( 858, 275 )
 
 [node name="Coin4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 932, 153 )
+position = Vector2( 921, 154 )
 
 [node name="Coin5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1021, 149 )
+position = Vector2( 1002, 152 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1103, 148 )
+position = Vector2( 1073, 152 )
 
 [node name="Coin7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1185, 144 )
+position = Vector2( 1147, 150 )
 
 [node name="Coin8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1248, 145 )
+position = Vector2( 1236, 151 )
+
+[editable path="Coin"]
