@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/coin.png" type="Texture" id=1]
 
@@ -7,6 +7,7 @@ radius = 34.3228
 
 [sub_resource type="Animation" id=2]
 resource_name = "bouncing"
+length = 2.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -21,14 +22,47 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 30 ), Vector2( 0, -30 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
 [node name="Coin" type="Area2D"]
-position = Vector2( 0, -26.0483 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -29.5423 )
 
 [node name="coin" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/bouncing = SubResource( 2 )
+anims/fade_out = SubResource( 3 )
