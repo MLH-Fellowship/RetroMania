@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/World/City2.png" type="Texture" id=1]
 [ext_resource path="res://src/tiles2.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Level Controller/NextLevelPortal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Worlds/World2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Coin.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node"]
 
@@ -36,5 +37,29 @@ position = Vector2( 71, 420 )
 position = Vector2( 945, 451 )
 
 [node name="NextLevel2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1623, 270 )
+position = Vector2( 1593, 243 )
 next_scene = ExtResource( 5 )
+
+[node name="Coin" parent="." instance=ExtResource( 7 )]
+position = Vector2( 797, 282 )
+
+[node name="Coin2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 665, 340 )
+
+[node name="Coin3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 846, 280 )
+
+[node name="Coin4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 932, 153 )
+
+[node name="Coin5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1021, 149 )
+
+[node name="Coin6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1103, 148 )
+
+[node name="Coin7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1185, 144 )
+
+[node name="Coin8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1248, 145 )
