@@ -53,4 +53,7 @@ func _physics_process(delta):
 
 # kill the player if it touches the enemy
 func _on_EnemyDetector_body_entered(body):
+	var context = get_tree().get_current_scene().get_name()
+	var level = "res://src/Worlds/$context.tscn"
+	get_tree().change_scene(level)
 	queue_free()
