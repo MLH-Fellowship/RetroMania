@@ -21,12 +21,12 @@ func _physics_process(delta):
 		move_dir +=1
 	if Input.is_action_pressed("move_left"):
 		move_dir -=1
-		
+
 	#for hold to fire
 	if Input.is_action_just_pressed("shoot"):
 		var fireball = FIREBALL.instance()
 		get_parent().add_child(fireball)
-		
+
 		#get position2D so fireball fires from player
 		fireball.position = $Position2D.global_position
 	move_and_slide(Vector2(move_dir* MOVE_SPEED, y_velo),Vector2(0, -1))
@@ -50,3 +50,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play("run")
 	else:
 		$AnimatedSprite.play("jump")
+
+# kill the player if it touches the enemy
+func _on_EnemyDetector_body_entered():
+	queue_free()

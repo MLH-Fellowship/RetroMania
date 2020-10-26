@@ -9,40 +9,39 @@
 [ext_resource path="res://assets/Characters/Enemy/tile002.png" type="Texture" id=7]
 [ext_resource path="res://assets/Characters/Enemy/death.png" type="Texture" id=8]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "dead",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 23, 12 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23, 7 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 9
 script = ExtResource( 2 )
 
 [node name="Enemy" type="AnimatedSprite" parent="."]
 position = Vector2( 4, -30.5 )
 scale = Vector2( 1.16667, 1.22917 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 4, -13 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 visible = false
@@ -59,5 +58,5 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
 modulate = Color( 0.215686, 0.45098, 0.752941, 1 )
 position = Vector2( 3, 4 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

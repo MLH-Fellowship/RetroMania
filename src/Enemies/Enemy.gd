@@ -5,18 +5,19 @@ var direction = 1
 var new_velocity = Vector2()
 var new_speed = 30
 
-#check if enemy is dead 
+#check if enemy is dead
 var is_dead = false
 
 # moving the enemy to the left, also deactivate physics process at the start of the game
 func _ready():
 	_velocity.x = -speed.x
 
+# kills the enemy when fire ball hits it
 func dead():
 	is_dead = true
 	new_velocity.x = 0
-	$Enemy.play("dead")
-	
+	queue_free()
+
 # when the player hits the enemy to kill
 func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	if body.global_position.y > get_node("StompDetector").global_position.y:
@@ -35,15 +36,10 @@ func _physics_process(delta):
 		else:
 			$Enemy.flip_h = true
 		$Enemy.play('walk')
-		
+
 		if is_on_wall():
 			direction = direction * -1
 			_velocity.x *= -1.0
-	
-		
+
+
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-
-
-
-
-

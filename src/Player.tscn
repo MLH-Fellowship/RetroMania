@@ -58,6 +58,7 @@ animations = [ {
 extents = Vector2( 13, 10 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -86,7 +87,6 @@ editor_draw_limits = true
 [node name="EnemyDetector" type="Area2D" parent="."]
 visible = false
 monitorable = false
-collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
@@ -96,3 +96,4 @@ shape = SubResource( 4 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 20, 0 )
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
