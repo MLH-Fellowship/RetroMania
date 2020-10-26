@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/tiles2.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/World/City3.png" type="Texture" id=3]
 [ext_resource path="res://src/Enemies/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Level Controller/NextLevelPortal.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node"]
 
@@ -31,4 +33,8 @@ tile_data = PoolIntArray( -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, 0, 161061273
 position = Vector2( 71, 420 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 972, 431 )
+position = Vector2( 960, 448 )
+
+[node name="NextLevel2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1145, 202 )
+next_scene = ExtResource( 5 )

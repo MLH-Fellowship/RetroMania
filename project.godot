@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Sprint 2 Plaformer"
-run/main_scene="res://src/Worlds/World.tscn"
+run/main_scene="res://src/Screens/MainScreen.tscn"
 config/icon="res://icon.png"
 
 [input]

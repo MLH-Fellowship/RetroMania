@@ -4,6 +4,8 @@ onready var anim_player: AnimationPlayer = $AnimationPlayer
 #The packed scene type refers to any level (scene) file
 export var next_scene: PackedScene
 
+func _process(delta):
+	$portal.play("portalwarp")
 #When the nextLevel detects the player, teleport() will be called
 func _on_NextLevel2D_body_entered(body : PhysicsBody2D) -> void:
 	teleport()
