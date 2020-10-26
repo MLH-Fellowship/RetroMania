@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/World/City2.png" type="Texture" id=1]
 [ext_resource path="res://src/tiles2.tres" type="TileSet" id=2]
@@ -7,8 +7,14 @@
 [ext_resource path="res://src/Worlds/World2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node"]
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 110
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 8 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -20
