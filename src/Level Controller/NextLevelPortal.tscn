@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/World/Portal/tile001.png" type="Texture" id=8]
 [ext_resource path="res://assets/World/Portal/tile002.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -18,12 +18,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 5.33506
 height = 5.23913
 
-[sub_resource type="Animation" id=2]
-resource_name = "FadeIn"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("TransitionLayer/ColorRect:color")
 tracks/0/interp = 1
@@ -49,8 +48,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Start"
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("TransitionLayer/ColorRect:color")
@@ -85,13 +83,13 @@ script = ExtResource( 2 )
 [node name="portal" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -60 )
 scale = Vector2( 1.89844, 1.54688 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "portalwarp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3, -52 )
 scale = Vector2( 3.56135, 4.43333 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -105,6 +103,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 2 )
-anims/Start = SubResource( 3 )
+anims/FadeIn = SubResource( 3 )
+anims/Start = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_NextLevel2D_body_entered"]

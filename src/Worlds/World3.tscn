@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Level Controller/NextLevelPortal.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Node"]
+[node name="World3" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -20

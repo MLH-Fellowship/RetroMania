@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Worlds/World3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=6]
 
-[node name="World" type="Node"]
+[node name="World2" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -20
