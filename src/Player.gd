@@ -51,8 +51,13 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.play("jump")
 
-# kill the player if it touches the enemy
+# executes when the player detects the enemy
 func _on_EnemyDetector_body_entered(body):
+	die()
+
+
+# kill the player if it touches the enemy
+func die():
 	var currentLevelName = get_tree().current_scene.name
 
 	var format_string = "res://src/Worlds/%s.tscn"
@@ -61,4 +66,7 @@ func _on_EnemyDetector_body_entered(body):
 	var level = format_string %currentLevelName
 
 	get_tree().change_scene(level)
+
+	#increasing the player death count
+	PlayerData.deaths +=1
 	queue_free()

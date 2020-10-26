@@ -5,6 +5,9 @@ var direction = 1
 var new_velocity = Vector2()
 var new_speed = 30
 
+#score
+export var score := 100
+
 #check if enemy is dead
 var is_dead = false
 
@@ -16,6 +19,7 @@ func _ready():
 func dead():
 	is_dead = true
 	new_velocity.x = 0
+	PlayerData.score += score
 	queue_free()
 
 # when the player hits the enemy to kill
@@ -23,6 +27,7 @@ func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	if body.global_position.y > get_node("StompDetector").global_position.y:
 		return
 	get_node("CollisionShape2D").disabled = true
+	PlayerData.score += score
 	queue_free()
 
 # making the enemy move right when it hits something
