@@ -40,30 +40,32 @@ __meta__ = {
 }
 
 [node name="Title" parent="PauseOverlay" instance=ExtResource( 1 )]
-margin_left = -224.0
-margin_top = 140.0
-margin_right = 232.0
-margin_bottom = 176.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -239.0
+margin_top = -168.0
+margin_right = 217.0
+margin_bottom = -132.0
 text = "Paused"
 
 [node name="ChangeSceneButton" parent="PauseOverlay" instance=ExtResource( 2 )]
-margin_left = 333.0
-margin_top = 264.0
-margin_right = 654.0
-margin_bottom = 326.0
+margin_left = 339.0
+margin_top = 261.0
+margin_right = 660.0
+margin_bottom = 323.0
 text = "Main Screen"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="PauseOverlay" instance=ExtResource( 3 )]
-margin_left = 333.0
-margin_top = 333.0
-margin_right = 654.0
-margin_bottom = 393.0
+margin_left = 339.0
+margin_top = 330.0
+margin_right = 660.0
+margin_bottom = 390.0
 
 [node name="Retry" parent="PauseOverlay" instance=ExtResource( 4 )]
-margin_left = 333.0
+margin_left = 339.0
 margin_top = 193.0
-margin_right = 654.0
+margin_right = 660.0
 margin_bottom = 255.0
 text = "Retry"
 script = ExtResource( 6 )
