@@ -64,7 +64,7 @@ func die():
 
 	#formatting the string to add the current level name
 	var level = format_string %currentLevelName
-
+	print(level)
 	get_tree().change_scene(level)
 
 	#increasing the player death count

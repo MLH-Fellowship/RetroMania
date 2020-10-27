@@ -75,7 +75,6 @@ frames = SubResource( 3 )
 animation = "attack"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 current = true
 limit_left = 0
 limit_top = 0
