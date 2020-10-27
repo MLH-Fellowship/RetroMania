@@ -43,15 +43,15 @@ animations = [ {
 "name": "jump",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "run",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -75,11 +75,10 @@ frames = SubResource( 3 )
 animation = "attack"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 3000
+limit_right = 3850
 limit_bottom = 500
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
