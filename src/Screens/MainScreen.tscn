@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
@@ -56,6 +56,39 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.184314, 0.192157, 0.552941, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color( 0.152941, 0.101961, 0.690196, 0.6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.243137, 0.235294, 0.27451, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.184314, 0.192157, 0.552941, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.25098, 0.243137, 0.282353, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,7 +102,7 @@ position = Vector2( 512, 301 )
 scale = Vector2( 2.044, 1.20654 )
 z_index = -10
 frames = SubResource( 1 )
-frame = 1
+frame = 40
 speed_scale = 5.0
 playing = true
 
@@ -80,11 +113,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -129.0
+margin_left = -129.707
 margin_top = -41.0
-margin_right = 82.0
+margin_right = 81.2929
 margin_bottom = 16.0
 rect_scale = Vector2( 1.21005, 1.04549 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 0.0313726, 0.027451, 0.027451, 1 )
 next_scene_path = "res://src/Worlds/World.tscn"
 
@@ -97,3 +132,5 @@ margin_left = -127.976
 margin_top = -29.4
 margin_right = 128.024
 margin_bottom = 29.6
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
