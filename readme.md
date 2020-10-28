@@ -14,6 +14,10 @@ At that grave time, a young lady who claimed that she was from the future steppe
 
 ![Demo](assets/Demo/demo.gif)
 
+## ↓ DOWNLOAD
+
+You can find the game [here](https://github.com/MLH-Fellowship/RetroMania/releases/tag/1.0). Download according to your operating system and then install it. The game is currently available for Windows, macOS & Linux.
+
 ## 💥 PLATFORM
 
 We used [Godot Engine](https://github.com/godotengine/godot) to develop this game. Godot is an open-source software that uses GDScripts or C# for game development. For this project, we went with GDScripts.
