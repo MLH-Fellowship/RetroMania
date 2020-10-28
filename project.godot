@@ -28,6 +28,10 @@ config/icon="res://icon.png"
 
 PlayerData="*res://src/Autoload/PlayerData.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 move_left={
