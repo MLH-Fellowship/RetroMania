@@ -12,5 +12,3 @@ func play_music():
 	$Music.stream = world_sound
 	$Music.play()
 
-func stop():
-	$Music.stop()
