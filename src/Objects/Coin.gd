@@ -8,4 +8,5 @@ onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
 #fading out animation when player touches the coin
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	PlayerData.score += score
+	$coin/AudioStreamPlayer2D.play()
 	anim_player.play("fade_out")

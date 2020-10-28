@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/World/City2.png" type="Texture" id=1]
 [ext_resource path="res://src/tilesUpdate.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/Enemies/Goblin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Enemies/Skeleton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Enemies/Flying Eye.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Worlds/World.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "bouncing"
@@ -131,6 +132,7 @@ tracks/1/keys = {
 }
 
 [node name="World" type="Node"]
+script = ExtResource( 12 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 110
