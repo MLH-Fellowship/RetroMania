@@ -102,11 +102,14 @@ position = Vector2( 512, 301 )
 scale = Vector2( 2.044, 1.20654 )
 z_index = -10
 frames = SubResource( 1 )
-frame = 40
+frame = 36
 speed_scale = 5.0
 playing = true
 
 [node name="Title" parent="." instance=ExtResource( 1 )]
+margin_left = -220.808
+margin_right = 235.192
+text = "Retro Mania"
 
 [node name="PlayButton" parent="." instance=ExtResource( 3 )]
 anchor_left = 0.5
