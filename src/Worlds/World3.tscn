@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Enemies/Skeleton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Enemies/Flying Eye.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Enemies/Boss.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/Audio/world3.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/Audio/boss.ogg" type="AudioStream" id=13]
 
 [node name="World3" type="Node"]
 script = ExtResource( 9 )
